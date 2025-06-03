@@ -2,6 +2,14 @@
  * Accessors
  */
 
+export function getOverviewPanel() {
+	return cy.getByTestId('logs-overview');
+}
+
+export function getOverviewPanelBody() {
+	return cy.getByTestId('logs-overview-body');
+}
+
 export function getOverviewStatus() {
 	return cy.getByTestId('logs-overview-status');
 }
@@ -69,7 +77,7 @@ export function clickOpenNdvAtRow(rowIndex: number) {
 
 export function clickTriggerPartialExecutionAtRow(rowIndex: number) {
 	getLogEntries().eq(rowIndex).realHover();
-	getLogEntries().eq(rowIndex).find('[aria-label="Test step"]').click();
+	getLogEntries().eq(rowIndex).find('[aria-label="Execute step"]').click();
 }
 
 export function setInputDisplayMode(mode: 'table' | 'ai' | 'json' | 'schema') {
